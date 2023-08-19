@@ -12,11 +12,13 @@ def get_date(place, forecast_days,kind):
     filterd_data = filterd_data[:no_days]
 
     if kind == "temperature":
+        # in the list [{main: {temp}}]
         filterd_data = [dict["main"]["temp"] for dict in filterd_data]
     if kind == "sky":
+        # in the list [ { {main: {temp}},weather: [ { main } ] }]
         filterd_data = [dict["weather"][0]["main"] for dict in filterd_data]
     return filterd_data
 
 if __name__ == "__main__":
-    print(get_date(place="tokyo",forecast_days=2,kind="temperature"))
+    print(get_date(place="tokyo",forecast_days=2,kind="sky"))
 

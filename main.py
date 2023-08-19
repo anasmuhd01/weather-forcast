@@ -9,7 +9,7 @@ option = st.selectbox("select data to view", ('temperature', 'sky'))
 st.subheader(f"{option} for the next {forecast_days} days {place}")
 
 
-d, t = get_date(place, forecast_days)
+d, t = get_date(place, forecast_days, option)
 
 fig = px.line(x=d, y=t, labels={"x": "date","y": "temp"})
 st.plotly_chart(fig)

@@ -1,1 +1,4 @@
 import plotly.express as px
+streamlit~=1.25.0
+plotly~=5.16.1
+requests~=2.31.0
